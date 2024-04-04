@@ -59,14 +59,14 @@ dotenv_1.default.config({
     path: path_1.default.resolve(__dirname, '../.env'),
 });
 var transporter = nodemailer_1.default.createTransport({
-    host: 'smtp.gmail.com',
-    secure: true,
-    port: 465,
-    auth: {
-        user: 'hippo01.ui@gmail.com',
-        pass: 'sicx rwhi hqkh lbhv',
-    },
-});
+  host: 'smtp.gmail.com',
+  secure: true,
+  port: 465,
+  auth: {
+    user: 'hippo01.ui@gmail.com',
+    pass: process.env.SMTP_PASS,
+  },
+})
 var cached = global.payload;
 if (!cached) {
     cached = global.payload = {

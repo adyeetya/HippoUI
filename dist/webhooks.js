@@ -47,14 +47,14 @@ var ReceiptEmail_1 = require("./components/emails/ReceiptEmail");
 var nodemailer_1 = __importDefault(require("nodemailer"));
 // const resend = new Resend(process.env.RESEND_API_KEY)
 var transporter = nodemailer_1.default.createTransport({
-    host: 'smtp.gmail.com',
-    secure: true,
-    port: 465,
-    auth: {
-        user: 'hippo01.ui@gmail.com',
-        pass: 'sicx rwhi hqkh lbhv',
-    },
-});
+  host: 'smtp.gmail.com',
+  secure: true,
+  port: 465,
+  auth: {
+    user: 'hippo01.ui@gmail.com',
+    pass: process.env.SMTP_PASS,
+  },
+})
 var stripeWebhookHandler = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var webhookRequest, body, signature, event, session, payload, users, user, orders, order, data, error_1;
     var _a, _b;
